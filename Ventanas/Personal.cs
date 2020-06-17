@@ -321,7 +321,7 @@ namespace PersonalVicenteLeon.Ventanas
 
         }
 
-        private void dataGridUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private async void dataGridUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             panelPersonal.Visible = true;
 
@@ -370,7 +370,19 @@ namespace PersonalVicenteLeon.Ventanas
             txtEncontrado.Text = dataGridUsuarios.SelectedCells[31].Value?.ToString();
             dropDispoFin.Text = dataGridUsuarios.SelectedCells[32].Value?.ToString();
             txtMotivo.Text = dataGridUsuarios.SelectedCells[33].Value?.ToString();
-            dropJornada.Text = dataGridUsuarios.SelectedCells[34].Value?.ToString();
+            try
+            {
+                var persona = await repository.ObtenerPersonaPorID(Convert.ToInt32(dataGridUsuarios.SelectedCells[1].Value));
+
+                var jornada = await repository.ObtenerJorandaPorIDPerso(Convert.ToInt32(persona.id_jornada));
+
+                dropJornada.Text = jornada?.Jornada_laboral ?? "SELECCIONE...";
+            }
+            catch
+            {
+
+            }
+
             dropSerbA.Text = dataGridUsuarios.SelectedCells[38].Value?.ToString();
             txtNumeroVeces.Text = dataGridUsuarios.SelectedCells[39].Value?.ToString();
             lblIdDispo.Text = dataGridUsuarios.SelectedCells[40].Value?.ToString();

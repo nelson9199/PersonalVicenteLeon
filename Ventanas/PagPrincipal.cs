@@ -37,7 +37,14 @@ namespace PersonalVicenteLeon.Ventanas
             }
             else
             {
-                formUsuarios.Activate();
+                try
+                {
+                    formUsuarios.Activate();
+                }
+                catch
+                {
+
+                }
             }
         }
 
@@ -62,7 +69,14 @@ namespace PersonalVicenteLeon.Ventanas
             }
             else
             {
-                formInstituto.Activate();
+                try
+                {
+                    formInstituto.Activate();
+                }
+                catch
+                {
+
+                }
             }
         }
 
@@ -88,7 +102,15 @@ namespace PersonalVicenteLeon.Ventanas
             }
             else
             {
-                formUsuarios.Activate();
+                try
+                {
+                    formUsuarios.Activate();
+                }
+                catch
+                {
+
+                }
+            
             }
         }
 
@@ -109,7 +131,14 @@ namespace PersonalVicenteLeon.Ventanas
             }
             else
             {
-                jornadas.Activate();
+                try
+                {
+                    jornadas.Activate();
+                }
+                catch
+                {
+
+                }
             }
         }
         private void CerrarFormaJornada(object sender, FormClosedEventArgs e)

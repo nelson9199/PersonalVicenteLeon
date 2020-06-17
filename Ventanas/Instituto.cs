@@ -54,17 +54,6 @@ namespace PersonalVicenteLeon.Ventanas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            panelUsuarios.Visible = true;
-            txtNombre.Text = "";
-            txtCodIess.Text = "";
-            txtCorreo.Text = "";
-            txtDireccion.Text = "";
-            txtParroquia.Text = "";
-            txtProvincia.Text = "";
-            txtTelefono.Text = "";
-            txtZona.Text = "";
-            btnGuardarCambios.Enabled = false;
-            btnGuardar.Enabled = true;
         }
 
         private instituto ObtenerDatosInsert()

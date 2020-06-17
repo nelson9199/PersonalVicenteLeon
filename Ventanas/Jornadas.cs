@@ -72,6 +72,12 @@ namespace PersonalVicenteLeon.Ventanas
             txtFinJ.Text = "";
             txtInicioJ.Text = "";
             txtJornada.Text = "";
+            errorProvider1.SetError(txtFinJ, "");
+
+
+            errorProvider1.SetError(txtInicioJ, "");
+
+            errorProvider1.SetError(txtJornada, "");
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -84,6 +90,14 @@ namespace PersonalVicenteLeon.Ventanas
             bunifuShadowPanel1.Visible = true;
             btnGuardar.Enabled = false;
             btnGuardarCambios.Enabled = true;
+
+            errorProvider1.SetError(txtFinJ, "");
+
+
+            errorProvider1.SetError(txtInicioJ, "");
+
+            errorProvider1.SetError(txtJornada, "");
+
 
             lblIdJ.Text = dataGridJornada.SelectedCells[1].Value?.ToString();
             txtFinJ.Text = dataGridJornada.SelectedCells[4].Value?.ToString();
@@ -164,10 +178,11 @@ namespace PersonalVicenteLeon.Ventanas
                     Mostrar();
                     bunifuShadowPanel1.Visible = false;
                 }
-                else
+                else if (isOK == false)
                 {
-                    MessageBox.Show("No se pudo modificar los datos");
+                    MessageBox.Show("Datos Modificados");
                     Mostrar();
+                    bunifuShadowPanel1.Visible = false;
                 }
             }
             catch
@@ -182,7 +197,7 @@ namespace PersonalVicenteLeon.Ventanas
             {
                 DialogResult result;
 
-                result = MessageBox.Show("¿Realmente desea eliminar este Usuario?", "Eliminando Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                result = MessageBox.Show("¿Realmente desea eliminar esta Jornada?", "Eliminando Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (result == DialogResult.OK)
                 {

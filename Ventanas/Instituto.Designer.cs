@@ -110,8 +110,8 @@
             this.dataGridUsuarios = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNuevo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnNuevo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panelUsuarios.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).BeginInit();
@@ -1274,6 +1274,10 @@
             this.panel1.Size = new System.Drawing.Size(1404, 85);
             this.panel1.TabIndex = 6;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // btnNuevo
             // 
             this.btnNuevo.AllowToggling = false;
@@ -1283,7 +1287,7 @@
             this.btnNuevo.BackColor1 = System.Drawing.Color.DodgerBlue;
             this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
             this.btnNuevo.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnNuevo.ButtonText = "Nuevo";
+            this.btnNuevo.ButtonText = "";
             this.btnNuevo.ButtonTextMarginLeft = 0;
             this.btnNuevo.ColorContrastOnClick = 45;
             this.btnNuevo.ColorContrastOnHover = 45;
@@ -1298,7 +1302,7 @@
             this.btnNuevo.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnNuevo.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnNuevo.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.IconMarginLeft = 11;
@@ -1339,10 +1343,6 @@
             this.btnNuevo.UseDefaultRadiusAndThickness = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // Instituto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1380,7 +1380,6 @@
         private Bunifu.UI.WinForms.BunifuDataGridView dataGridUsuarios;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnNuevo;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtCodIess;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtProvincia;
@@ -1398,5 +1397,6 @@
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtCanton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnNuevo;
     }
 }
