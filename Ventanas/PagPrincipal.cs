@@ -84,6 +84,7 @@ namespace PersonalVicenteLeon.Ventanas
                 personal.MdiParent = this;
                 personal.FormClosed += new FormClosedEventHandler(CerrarFormaPersonal);
                 personal.Show();
+                personal.WindowState = FormWindowState.Maximized;
             }
             else
             {
@@ -114,6 +115,11 @@ namespace PersonalVicenteLeon.Ventanas
         private void CerrarFormaJornada(object sender, FormClosedEventArgs e)
         {
             jornadas = null;
+        }
+
+        private void personalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

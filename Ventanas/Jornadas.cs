@@ -194,7 +194,6 @@ namespace PersonalVicenteLeon.Ventanas
                         {
                             MessageBox.Show("Jornada eliminada");
                             Mostrar();
-                            bunifuShadowPanel1.Visible = false;
                         }
                     }
                     catch (Exception ex)

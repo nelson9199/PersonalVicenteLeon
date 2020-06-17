@@ -226,6 +226,15 @@ namespace PersonalVicenteLeon.Ventanas
             panelPersonal.Visible = true;
             btnGuardar.Enabled = true;
             btnGuardarCambios.Enabled = false;
+            errorProvider1.SetError(dropTipoIden, "");
+            errorProvider1.SetError(dropDispoFin, "");
+            errorProvider1.SetError(dropDisca, "");
+            errorProvider1.SetError(dropSexo, "");
+            errorProvider1.SetError(dropSerbA, "");
+            errorProvider1.SetError(dropJornada, "");
+            errorProvider1.SetError(txtGrupOp, "");
+            errorProvider1.SetError(txtEdad, "");
+            errorProvider1.SetError(txtIdentificacion, "");
             dropDisca.Text = "SELECCIONE...";
             dropDispoFin.Text = "SELECCIONE...";
             dropJornada.Text = "SELECCIONE...";
@@ -318,6 +327,15 @@ namespace PersonalVicenteLeon.Ventanas
 
             btnGuardar.Enabled = false;
             btnGuardarCambios.Enabled = true;
+            errorProvider1.SetError(dropTipoIden, "");
+            errorProvider1.SetError(dropDispoFin, "");
+            errorProvider1.SetError(dropDisca, "");
+            errorProvider1.SetError(dropSexo, "");
+            errorProvider1.SetError(dropSerbA, "");
+            errorProvider1.SetError(dropJornada, "");
+            errorProvider1.SetError(txtGrupOp, "");
+            errorProvider1.SetError(txtEdad, "");
+            errorProvider1.SetError(txtIdentificacion, "");
 
             lblId.Text = dataGridUsuarios.SelectedCells[1].Value?.ToString();
             txtPrimerN.Text = dataGridUsuarios.SelectedCells[2].Value?.ToString();
@@ -544,6 +562,34 @@ namespace PersonalVicenteLeon.Ventanas
         private void txtGrupOp_KeyPress(object sender, KeyPressEventArgs e)
         {
             Numeros(txtGrupOp, e);
+        }
+
+        private async void dataGridUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == this.dataGridUsuarios.Columns["eliminar"].Index)
+            {
+                DialogResult result;
+
+                result = MessageBox.Show("¿Realmente desea eliminar esta Persona?", "Eliminando Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.OK)
+                {
+                    try
+                    {
+                        var eliminado = await repository.EliminarPersonal(Convert.ToInt32(dataGridUsuarios.SelectedCells[1].Value));
+
+                        if (eliminado)
+                        {
+                            MessageBox.Show("Persona eliminada");
+                            Mostrar();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
         }
     }
 }

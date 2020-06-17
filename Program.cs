@@ -19,7 +19,7 @@ namespace PersonalVicenteLeon
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PagPrincipal());
+            Application.Run(new Login());
         }
     }
 }
