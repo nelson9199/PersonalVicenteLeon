@@ -7,17 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AccesoDatos;
+using AutoMapper;
 
 namespace PersonalVicenteLeon.Ventanas
 {
     public partial class PagPrincipal : Form
     {
         private Usuarios formUsuarios = null;
-        private Pais pais = null;
+        private Instituto formInstituto = null;
+        private Personal personal = null;
+        private Jornadas jornadas = null;
 
         public PagPrincipal()
         {
             InitializeComponent();
+
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,23 +48,72 @@ namespace PersonalVicenteLeon.Ventanas
 
         private void paisesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pais == null)
+        }
+
+        private void institutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formInstituto == null)
             {
-                pais = new Pais();
-                pais.MdiParent = this;
-                pais.FormClosed += new FormClosedEventHandler(CerrarFormaPais);
-                pais.Show();
-                pais.WindowState = FormWindowState.Normal;
+                formInstituto = new Instituto();
+                formInstituto.MdiParent = this;
+                formInstituto.FormClosed += new FormClosedEventHandler(CerrarFormaInsti);
+                formInstituto.Show();
+                formInstituto.WindowState = FormWindowState.Maximized;
             }
             else
             {
-                pais.Activate();
+                formInstituto.Activate();
             }
         }
 
-        private void CerrarFormaPais(object sender, FormClosedEventArgs e)
+        private void CerrarFormaInsti(object sender, FormClosedEventArgs e)
         {
-            pais = null;
+            formInstituto = null;
+        }
+
+        private void PagPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void personalToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (personal == null)
+            {
+                personal = new Personal();
+                personal.MdiParent = this;
+                personal.FormClosed += new FormClosedEventHandler(CerrarFormaPersonal);
+                personal.Show();
+            }
+            else
+            {
+                formUsuarios.Activate();
+            }
+        }
+
+        private void CerrarFormaPersonal(object sender, FormClosedEventArgs e)
+        {
+            personal = null;
+        }
+
+        private void jornadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (jornadas == null)
+            {
+                jornadas = new Jornadas();
+                jornadas.MdiParent = this;
+                jornadas.FormClosed += new FormClosedEventHandler(CerrarFormaJornada);
+                jornadas.Show();
+                jornadas.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                jornadas.Activate();
+            }
+        }
+        private void CerrarFormaJornada(object sender, FormClosedEventArgs e)
+        {
+            jornadas = null;
         }
     }
 }

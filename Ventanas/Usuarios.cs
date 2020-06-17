@@ -13,7 +13,7 @@ namespace PersonalVicenteLeon.Ventanas
 {
     public partial class Usuarios : Form
     {
-        private readonly Repository repository = new Repository();
+        private Repository repository = new Repository();
 
         public Usuarios()
         {
@@ -53,7 +53,8 @@ namespace PersonalVicenteLeon.Ventanas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            errorProvider1.SetError(txtClave, "");
+            errorProvider1.SetError(txtUser, "");
             txtUser.Text = "";
             txtClave.Text = "";
             panelUsuarios.Visible = true;
@@ -80,7 +81,7 @@ namespace PersonalVicenteLeon.Ventanas
         private usuarios ObtenerDatosDelGridUpdate()
         {
             usuarios usuarios = new usuarios();
-            
+
             usuarios.id = Convert.ToInt32(lblId.Text);
             usuarios.user = txtUser.Text;
             usuarios.clave = txtClave.Text;
@@ -90,6 +91,17 @@ namespace PersonalVicenteLeon.Ventanas
 
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (txtClave.Text == "")
+            {
+                errorProvider1.SetError(txtClave, "Debe llenar este campo");
+                return;
+            }
+            if (txtUser.Text == "")
+            {
+                errorProvider1.SetError(txtUser, "Debe llenar este campo");
+                return;
+            }
+
             try
             {
                 var usuarioInsert = ObtenerDatosDelGridInsert();
@@ -151,6 +163,9 @@ namespace PersonalVicenteLeon.Ventanas
             panelUsuarios.Visible = true;
             btnGuardar.Enabled = false;
             btnGuardarCambios.Enabled = true;
+            txtClave.Text = "";
+            errorProvider1.SetError(txtClave, "");
+            errorProvider1.SetError(txtUser, "");
 
             try
             {
@@ -166,6 +181,17 @@ namespace PersonalVicenteLeon.Ventanas
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
+            if (txtClave.Text == "")
+            {
+                errorProvider1.SetError(txtClave, "Debe llenar este campo");
+                return;
+            }
+            if (txtUser.Text == "")
+            {
+                errorProvider1.SetError(txtUser, "Debe llenar este campo");
+                return;
+            }
+
             try
             {
                 var usuarioInsert = ObtenerDatosDelGridUpdate();

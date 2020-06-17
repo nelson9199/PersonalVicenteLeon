@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
@@ -66,10 +67,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridUsuarios = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -562,7 +565,6 @@
             this.eliminar.MinimumWidth = 6;
             this.eliminar.Name = "eliminar";
             this.eliminar.ReadOnly = true;
-            this.eliminar.Width = 6;
             // 
             // dataGridUsuarios
             // 
@@ -572,7 +574,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dataGridUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dataGridUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -632,6 +634,10 @@
             this.dataGridUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridUsuarios_CellContentClick);
             this.dataGridUsuarios.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridUsuarios_DataError);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Usuarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -650,6 +656,7 @@
             this.panelUsuarios.ResumeLayout(false);
             this.panelUsuarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -669,5 +676,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
         private Bunifu.UI.WinForms.BunifuDataGridView dataGridUsuarios;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

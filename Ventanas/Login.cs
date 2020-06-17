@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AccesoDatos;
+using AutoMapper;
 using PersonalVicenteLeon.Ventanas;
 
 namespace PersonalVicenteLeon.Ventanas
@@ -20,6 +21,7 @@ namespace PersonalVicenteLeon.Ventanas
         public Login()
         {
             InitializeComponent();
+
         }
 
         private void txtPassword_OnValueChanged(object sender, EventArgs e)
