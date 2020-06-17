@@ -110,8 +110,8 @@
             this.dataGridUsuarios = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnNuevo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelUsuarios.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).BeginInit();
@@ -1274,10 +1274,6 @@
             this.panel1.Size = new System.Drawing.Size(1404, 85);
             this.panel1.TabIndex = 6;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // btnNuevo
             // 
             this.btnNuevo.AllowToggling = false;
@@ -1315,7 +1311,7 @@
             this.btnNuevo.IdleIconLeftImage = null;
             this.btnNuevo.IdleIconRightImage = null;
             this.btnNuevo.IndicateFocus = false;
-            this.btnNuevo.Location = new System.Drawing.Point(13, 13);
+            this.btnNuevo.Location = new System.Drawing.Point(13, 23);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             stateProperties43.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
@@ -1342,6 +1338,10 @@
             this.btnNuevo.TextMarginLeft = 0;
             this.btnNuevo.UseDefaultRadiusAndThickness = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Instituto
             // 

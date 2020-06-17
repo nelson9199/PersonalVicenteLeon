@@ -336,58 +336,65 @@ namespace PersonalVicenteLeon.Ventanas
             errorProvider1.SetError(txtGrupOp, "");
             errorProvider1.SetError(txtEdad, "");
             errorProvider1.SetError(txtIdentificacion, "");
-
-            lblId.Text = dataGridUsuarios.SelectedCells[1].Value?.ToString();
-            txtPrimerN.Text = dataGridUsuarios.SelectedCells[2].Value?.ToString();
-            txtSegundoN.Text = dataGridUsuarios.SelectedCells[3].Value?.ToString();
-            txtPrimerAp.Text = dataGridUsuarios.SelectedCells[4].Value?.ToString();
-            txtSegundoAp.Text = dataGridUsuarios.SelectedCells[5].Value?.ToString();
-            dropTipoIden.Text = dataGridUsuarios.SelectedCells[6].Value?.ToString();
-            txtIdentificacion.Text = dataGridUsuarios.SelectedCells[7].Value?.ToString();
-            dropSexo.Text = dataGridUsuarios.SelectedCells[8].Value?.ToString();
-            txtCorreoInsti.Text = dataGridUsuarios.SelectedCells[9].Value?.ToString();
-            txtCorreoConv.Text = dataGridUsuarios.SelectedCells[10].Value?.ToString();
-            txtTeleConv.Text = dataGridUsuarios.SelectedCells[11].Value?.ToString();
-            txtNumCel.Text = dataGridUsuarios.SelectedCells[12].Value?.ToString();
-            dropFecNa.Text = dataGridUsuarios.SelectedCells[13].Value?.ToString();
-            txtEdad.Text = dataGridUsuarios.SelectedCells[14].Value?.ToString();
-            txtProvNaci.Text = dataGridUsuarios.SelectedCells[15].Value?.ToString();
-            txtProvResi.Text = dataGridUsuarios.SelectedCells[16].Value?.ToString();
-            txtCanton.Text = dataGridUsuarios.SelectedCells[17].Value?.ToString();
-            txtParroquiaResi.Text = dataGridUsuarios.SelectedCells[18].Value?.ToString();
-            txtDireccion.Text = dataGridUsuarios.SelectedCells[19].Value?.ToString();
-            txtSector.Text = dataGridUsuarios.SelectedCells[20].Value?.ToString();
-            dropDisca.Text = dataGridUsuarios.SelectedCells[21].Value?.ToString();
-            txtDiscap.Text = dataGridUsuarios.SelectedCells[22].Value?.ToString();
-            txtGrupOp.Text = dataGridUsuarios.SelectedCells[23].Value?.ToString();
-            dateInsti.Text = dataGridUsuarios.SelectedCells[24].Value?.ToString();
-            txtCargo.Text = dataGridUsuarios.SelectedCells[25].Value?.ToString();
-            txtNivelFormacion.Text = dataGridUsuarios.SelectedCells[26].Value?.ToString();
-            txtDomInfo.Text = dataGridUsuarios.SelectedCells[27].Value?.ToString();
-            txtTituloPro.Text = dataGridUsuarios.SelectedCells[28].Value?.ToString();
-            txtTipoContr.Text = dataGridUsuarios.SelectedCells[29].Value?.ToString();
-            txtPaisNac.Text = dataGridUsuarios.SelectedCells[30].Value?.ToString();
-            txtEncontrado.Text = dataGridUsuarios.SelectedCells[31].Value?.ToString();
-            dropDispoFin.Text = dataGridUsuarios.SelectedCells[32].Value?.ToString();
-            txtMotivo.Text = dataGridUsuarios.SelectedCells[33].Value?.ToString();
             try
             {
-                var persona = await repository.ObtenerPersonaPorID(Convert.ToInt32(dataGridUsuarios.SelectedCells[1].Value));
+                lblId.Text = dataGridUsuarios.SelectedCells[1].Value?.ToString();
+                txtPrimerN.Text = dataGridUsuarios.SelectedCells[2].Value?.ToString();
+                txtSegundoN.Text = dataGridUsuarios.SelectedCells[3].Value?.ToString();
+                txtPrimerAp.Text = dataGridUsuarios.SelectedCells[4].Value?.ToString();
+                txtSegundoAp.Text = dataGridUsuarios.SelectedCells[5].Value?.ToString();
+                dropTipoIden.Text = dataGridUsuarios.SelectedCells[6].Value?.ToString();
+                txtIdentificacion.Text = dataGridUsuarios.SelectedCells[7].Value?.ToString();
+                dropSexo.Text = dataGridUsuarios.SelectedCells[8].Value?.ToString();
+                txtCorreoInsti.Text = dataGridUsuarios.SelectedCells[9].Value?.ToString();
+                txtCorreoConv.Text = dataGridUsuarios.SelectedCells[10].Value?.ToString();
+                txtTeleConv.Text = dataGridUsuarios.SelectedCells[11].Value?.ToString();
+                txtNumCel.Text = dataGridUsuarios.SelectedCells[12].Value?.ToString();
+                dropFecNa.Text = dataGridUsuarios.SelectedCells[13].Value?.ToString();
+                txtEdad.Text = dataGridUsuarios.SelectedCells[14].Value?.ToString();
+                txtProvNaci.Text = dataGridUsuarios.SelectedCells[15].Value?.ToString();
+                txtProvResi.Text = dataGridUsuarios.SelectedCells[16].Value?.ToString();
+                txtCanton.Text = dataGridUsuarios.SelectedCells[17].Value?.ToString();
+                txtParroquiaResi.Text = dataGridUsuarios.SelectedCells[18].Value?.ToString();
+                txtDireccion.Text = dataGridUsuarios.SelectedCells[19].Value?.ToString();
+                txtSector.Text = dataGridUsuarios.SelectedCells[20].Value?.ToString();
+                dropDisca.Text = dataGridUsuarios.SelectedCells[21].Value?.ToString();
+                txtDiscap.Text = dataGridUsuarios.SelectedCells[22].Value?.ToString();
+                txtGrupOp.Text = dataGridUsuarios.SelectedCells[23].Value?.ToString();
+                dateInsti.Text = dataGridUsuarios.SelectedCells[24].Value?.ToString();
+                txtCargo.Text = dataGridUsuarios.SelectedCells[25].Value?.ToString();
+                txtNivelFormacion.Text = dataGridUsuarios.SelectedCells[26].Value?.ToString();
+                txtDomInfo.Text = dataGridUsuarios.SelectedCells[27].Value?.ToString();
+                txtTituloPro.Text = dataGridUsuarios.SelectedCells[28].Value?.ToString();
+                txtTipoContr.Text = dataGridUsuarios.SelectedCells[29].Value?.ToString();
+                txtPaisNac.Text = dataGridUsuarios.SelectedCells[30].Value?.ToString();
+                txtEncontrado.Text = dataGridUsuarios.SelectedCells[31].Value?.ToString();
+                dropDispoFin.Text = dataGridUsuarios.SelectedCells[32].Value?.ToString();
+                txtMotivo.Text = dataGridUsuarios.SelectedCells[33].Value?.ToString();
+                try
+                {
+                    var persona = await repository.ObtenerPersonaPorID(Convert.ToInt32(dataGridUsuarios.SelectedCells[1].Value));
 
-                var jornada = await repository.ObtenerJorandaPorIDPerso(Convert.ToInt32(persona.id_jornada));
+                    var jornada = await repository.ObtenerJorandaPorIDPerso(Convert.ToInt32(persona.id_jornada));
 
-                dropJornada.Text = jornada?.Jornada_laboral ?? "SELECCIONE...";
+                    dropJornada.Text = jornada?.Jornada_laboral ?? "SELECCIONE...";
+                }
+                catch
+                {
+
+                }
+
+                dropSerbA.Text = dataGridUsuarios.SelectedCells[38].Value?.ToString();
+                txtNumeroVeces.Text = dataGridUsuarios.SelectedCells[39].Value?.ToString();
+                lblIdDispo.Text = dataGridUsuarios.SelectedCells[40].Value?.ToString();
+                lblIdInsti.Text = dataGridUsuarios.SelectedCells[41].Value?.ToString();
+                lblJornada.Text = dataGridUsuarios.SelectedCells[42].Value?.ToString();
             }
             catch
             {
-
+                MessageBox.Show("No hay registros que mostrar");
             }
 
-            dropSerbA.Text = dataGridUsuarios.SelectedCells[38].Value?.ToString();
-            txtNumeroVeces.Text = dataGridUsuarios.SelectedCells[39].Value?.ToString();
-            lblIdDispo.Text = dataGridUsuarios.SelectedCells[40].Value?.ToString();
-            lblIdInsti.Text = dataGridUsuarios.SelectedCells[41].Value?.ToString();
-            lblJornada.Text = dataGridUsuarios.SelectedCells[42].Value?.ToString();
 
         }
 

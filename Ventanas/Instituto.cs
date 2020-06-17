@@ -168,17 +168,26 @@ namespace PersonalVicenteLeon.Ventanas
             btnGuardar.Enabled = false;
             btnGuardarCambios.Enabled = true;
 
-            lblId.Text = dataGridUsuarios.SelectedCells[1].Value?.ToString();
-            txtCodIess.Text = dataGridUsuarios.SelectedCells[2].Value?.ToString();
-            txtZona.Text = dataGridUsuarios.SelectedCells[3].Value?.ToString();
-            txtProvincia.Text = dataGridUsuarios.SelectedCells[4].Value?.ToString();
-            txtParroquia.Text = dataGridUsuarios.SelectedCells[5].Value?.ToString();
-            txtNombre.Text = dataGridUsuarios.SelectedCells[6].Value?.ToString();
-            txtDireccion.Text = dataGridUsuarios.SelectedCells[7].Value?.ToString();
-            txtTelefono.Text = dataGridUsuarios.SelectedCells[8].Value?.ToString();
-            txtCorreo.Text = dataGridUsuarios.SelectedCells[9].Value?.ToString();
-            dropFinaciamiento.Text = dataGridUsuarios.SelectedCells[10].Value?.ToString();
-            txtCanton.Text = dataGridUsuarios.SelectedCells[11].Value?.ToString();
+            try
+            {
+                lblId.Text = dataGridUsuarios.SelectedCells[1].Value?.ToString();
+                txtCodIess.Text = dataGridUsuarios.SelectedCells[2].Value?.ToString();
+                txtZona.Text = dataGridUsuarios.SelectedCells[3].Value?.ToString();
+                txtProvincia.Text = dataGridUsuarios.SelectedCells[4].Value?.ToString();
+                txtParroquia.Text = dataGridUsuarios.SelectedCells[5].Value?.ToString();
+                txtNombre.Text = dataGridUsuarios.SelectedCells[6].Value?.ToString();
+                txtDireccion.Text = dataGridUsuarios.SelectedCells[7].Value?.ToString();
+                txtTelefono.Text = dataGridUsuarios.SelectedCells[8].Value?.ToString();
+                txtCorreo.Text = dataGridUsuarios.SelectedCells[9].Value?.ToString();
+                dropFinaciamiento.Text = dataGridUsuarios.SelectedCells[10].Value?.ToString();
+                txtCanton.Text = dataGridUsuarios.SelectedCells[11].Value?.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("No hay registros que mostrar");
+            }
+
+
         }
 
         private async void btnGuardarCambios_Click(object sender, EventArgs e)

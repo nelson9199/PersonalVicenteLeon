@@ -165,7 +165,6 @@ namespace PersonalVicenteLeon.Ventanas
             btnGuardarCambios.Enabled = true;
             txtClave.Text = "";
             errorProvider1.SetError(txtClave, "");
-            errorProvider1.SetError(txtUser, "");
 
             try
             {
@@ -175,7 +174,7 @@ namespace PersonalVicenteLeon.Ventanas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No hay registros que mostrar");
             }
         }
 

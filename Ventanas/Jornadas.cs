@@ -98,11 +98,18 @@ namespace PersonalVicenteLeon.Ventanas
 
             errorProvider1.SetError(txtJornada, "");
 
+            try
+            {
+                lblIdJ.Text = dataGridJornada.SelectedCells[1].Value?.ToString();
+                txtFinJ.Text = dataGridJornada.SelectedCells[4].Value?.ToString();
+                txtInicioJ.Text = dataGridJornada.SelectedCells[3].Value?.ToString();
+                txtJornada.Text = dataGridJornada.SelectedCells[2].Value?.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("No hay registros que mostrar");
+            }
 
-            lblIdJ.Text = dataGridJornada.SelectedCells[1].Value?.ToString();
-            txtFinJ.Text = dataGridJornada.SelectedCells[4].Value?.ToString();
-            txtInicioJ.Text = dataGridJornada.SelectedCells[3].Value?.ToString();
-            txtJornada.Text = dataGridJornada.SelectedCells[2].Value?.ToString();
         }
 
         private async void btnGuardar_Click(object sender, EventArgs e)
